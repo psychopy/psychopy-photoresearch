@@ -24,8 +24,10 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
-urls.homepage = "https://github.com/mdcutone/psychopy-photoresearch"
-urls.changelog = "https://github.com/mdcutone/psychopy-photoresearch/blob/main/CHANGELOG.txt"
+urls.homepage = "https://github.com/psychopy/psychopy-photoresearch"
+urls.changelog = "https://github.com/psychopy/psychopy-photoresearch/blob/main/CHANGELOG.txt"
+urls.documentation = "https://pages.github.com/psychopy/psychopy-photoresearch"
+urls.repository = "https://github.com/psychopy/psychopy-photoresearch"
 dependencies = [
   "pyserial",
 ]
