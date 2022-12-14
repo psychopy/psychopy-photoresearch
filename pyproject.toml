@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "psychopy-photoresearch"
-version = "0.0.1"
+version = "0.0.1.post1"
 description = "Extension package for adding support for Photo Research Inc. light-measuring devices to PsychoPy."
 readme = "README.md"
 requires-python = ">= 3.7"
@@ -29,6 +29,7 @@ urls.changelog = "https://github.com/psychopy/psychopy-photoresearch/blob/main/C
 urls.documentation = "https://pages.github.com/psychopy/psychopy-photoresearch"
 urls.repository = "https://github.com/psychopy/psychopy-photoresearch"
 dependencies = [
+  "psychopy",
   "pyserial",
 ]
 
