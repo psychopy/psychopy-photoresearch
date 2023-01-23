@@ -139,13 +139,15 @@ class PR650:
         # read as many chars as are in the buffer
         self.com.read(self.com.inWaiting())
 
+
         # send the message
-        if type(message) != bytes:
-            self.com.write(message.encode('utf-8'))
-        else:
-            self.com.write(message)
-        self.com.flush()
-        # time.sleep(0.1)  # PR650 gets upset if hurried!
+        for letter in message:
+            # for PR655 have to send individual chars ! :-/
+            if type(letter)!=bytes:
+                letter = bytes(letter, 'utf-8')
+            self.com.write(letter)
+            self.com.flush()
+        time.sleep(0.1)  # PR650 gets upset if hurried!
 
         # get feedback (within timeout limit)
         self.com.timeout = timeout
