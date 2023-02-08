@@ -29,7 +29,6 @@ urls.changelog = "https://github.com/psychopy/psychopy-photoresearch/blob/main/C
 urls.documentation = "https://pages.github.com/psychopy/psychopy-photoresearch"
 urls.repository = "https://github.com/psychopy/psychopy-photoresearch"
 dependencies = [
-  "psychopy",
   "pyserial",
 ]
 
