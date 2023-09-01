@@ -5,6 +5,6 @@
 # Copyright (C) 2002-2018 Jonathan Peirce (C) 2019-2022 Open Science Tools Ltd.
 # Distributed under the terms of the GNU General Public License (GPL).
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 from .pr import PR650, PR655
