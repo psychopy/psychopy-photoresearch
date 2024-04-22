@@ -1,0 +1,16 @@
+===============================
+PR655
+===============================
+
+To import PR655, you can either use::
+
+    from psychopy_photoresearch.pr import PR655
+
+or, any time after `psychopy.plugins.activatePlugins` has been called::
+
+    from psychopy.hardware.pr import PR655
+
+.. autoclass:: psychopy_photoresearch.pr.PR655
+    :members:
+    :undoc-members:
+    :inherited-members:
