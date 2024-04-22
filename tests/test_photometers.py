@@ -9,8 +9,23 @@
 # Distributed under the terms of the GNU General Public License (GPL).
 
 import psychopy.logging as logging
-import psychopy.hardware as hardware  # use the stub in PsychoPy lib
-import pytest
+from psychopy import hardware, plugins
+
+
+from psychopy_photoresearch.pr import PR655, PR650
+
+plugins.activatePlugins()
+
+
+def test_getPhotometers():
+    """
+    Test that Photo Research photometers appear in getAllPhotometers once plugins are activated
+    """
+    # get all photometers
+    photoms = hardware.getAllPhotometers()
+    # make sure classes are present
+    assert PR650 in photoms
+    assert PR655 in photoms
 
 logging.console.setLevel(logging.DEBUG)
 
