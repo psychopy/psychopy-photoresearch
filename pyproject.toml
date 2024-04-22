@@ -46,8 +46,8 @@ tests = [
 ]
 
 [project.entry-points."psychopy.hardware.pr"]
-LS100 = "psychopy_photoresearch.pr:PR650"
-CS100A = "psychopy_photoresearch.pr:PR655"
+PR650 = "psychopy_photoresearch.pr:PR650"
+PR655 = "psychopy_photoresearch.pr:PR655"
 
 [tool.setuptools.packages.find]
 where = ["",]
