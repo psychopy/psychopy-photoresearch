@@ -1,5 +1,5 @@
 =======================================================
-Welcome to psychopy-template's documentation!
+Welcome to psychopy-photoresearch's documentation!
 =======================================================
 
 The `psychopy-photoresearch` plugin provides support for spectrophotometers from PhotoResearch
