@@ -1,0 +1,16 @@
+===============================
+PR650
+===============================
+
+To import PR650, you can either use::
+
+    from psychopy_photoresearch.pr import PR650
+
+or, any time after `psychopy.plugins.activatePlugins` has been called::
+
+    from psychopy.hardware.pr import PR650
+
+.. autoclass:: psychopy_photoresearch.pr.PR650
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PR650 &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="PR655" href="../PR655/" />
+    <link rel="prev" title="Welcome to psychopy-photoresearch’s documentation!" href="../../" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand small-logo" href="../../">
+          <img src="../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+        </a>
+        <a class="navbar-brand large-logo" href="../../">
+          <img src="../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+        </a>
+        <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+          <ul class="nav navbar-nav ml-auto">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../../download/">Install</a></li>
+            
+            <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+            
+              <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PR650</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PR655/">PR655</a></li>
+</ul>
+</ul>
+</li> -->
+              
+            
+            <!--  -->
+            
+            
+          </ul>
+
+            <!-- 
+              
+<form class="navbar-form navbar-right" action="../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+             -->
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <section id="pr650">
+<h1>PR650<a class="headerlink" href="#pr650" title="Link to this heading">¶</a></h1>
+<p>To import PR650, you can either use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psychopy_photoresearch.pr</span><span class="w"> </span><span class="kn">import</span> <span class="n">PR650</span>
+</pre></div>
+</div>
+<p>or, any time after <cite>psychopy.plugins.activatePlugins</cite> has been called:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psychopy.hardware.pr</span><span class="w"> </span><span class="kn">import</span> <span class="n">PR650</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psychopy_photoresearch.pr.</span></span><span class="sig-name descname"><span class="pre">PR650</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_photoresearch/pr/#PR650"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_photoresearch.pr.PR650" title="Link to this definition">¶</a></dt>
+<dd><p>An interface to the PR650 via the serial port.</p>
+<p>(Added in version 1.63.02)</p>
+<p>example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psychopy.hardware.pr</span><span class="w"> </span><span class="kn">import</span> <span class="n">PR650</span>
+<span class="n">myPR650</span> <span class="o">=</span> <span class="n">PR650</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="n">myPR650</span><span class="o">.</span><span class="n">getLum</span><span class="p">()</span>  <span class="c1"># make a measurement</span>
+<span class="n">nm</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="n">myPR650</span><span class="o">.</span><span class="n">getLastSpectrum</span><span class="p">()</span>  <span class="c1"># get a power spectrum for the</span>
+            <span class="n">last</span> <span class="n">measurement</span>
+</pre></div>
+</div>
+<p>NB <code class="xref py py-func docutils literal notranslate"><span class="pre">psychopy.hardware.findPhotometer()</span></code> will locate and return
+any supported device for you so you can also do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psychopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">hardware</span>
+<span class="n">phot</span> <span class="o">=</span> <span class="n">hardware</span><span class="o">.</span><span class="n">findPhotometer</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">phot</span><span class="o">.</span><span class="n">getLum</span><span class="p">())</span>
+</pre></div>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Troubleshooting<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Various messages are printed to the log regarding the function of
+this device, but to see them you need to set the printing of the
+log to the correct level:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">psychopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>  <span class="c1"># error messages only</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>  <span class="c1"># will give more info</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>  <span class="c1"># log all communications</span>
+</pre></div>
+</div>
+<p>If you’re using a keyspan adapter (at least on macOS) be aware that
+it needs a driver installed. Otherwise no ports will be found.</p>
+<p>Also note that the attempt to connect to the PR650 must occur within
+the first few seconds after turning it on.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650.driverFor">
+<span class="sig-name descname"><span class="pre">driverFor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['pr650']</span></em><a class="headerlink" href="#psychopy_photoresearch.pr.PR650.driverFor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650.getLastLum">
+<span class="sig-name descname"><span class="pre">getLastLum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_photoresearch/pr/#PR650.getLastLum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_photoresearch.pr.PR650.getLastLum" title="Link to this definition">¶</a></dt>
+<dd><p>This retrieves the luminance (in cd/m**2) from the last call to
+<code class="docutils literal notranslate"><span class="pre">.measure()</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650.getLastSpectrum">
+<span class="sig-name descname"><span class="pre">getLastSpectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_photoresearch/pr/#PR650.getLastSpectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_photoresearch.pr.PR650.getLastSpectrum" title="Link to this definition">¶</a></dt>
+<dd><p>This retrieves the spectrum from the last call to <code class="docutils literal notranslate"><span class="pre">.measure()</span></code></p>
+<p>If <code class="docutils literal notranslate"><span class="pre">parse=True</span></code> (default):
+The format is a num array with 100 rows [nm, power]</p>
+<p>otherwise:
+The output will be the raw string from the PR650 and should then
+be passed to <code class="docutils literal notranslate"><span class="pre">.parseSpectrumOutput()</span></code>. It’s more efficient to
+parse R,G,B strings at once than each individually.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650.getLum">
+<span class="sig-name descname"><span class="pre">getLum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_photoresearch/pr/#PR650.getLum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_photoresearch.pr.PR650.getLum" title="Link to this definition">¶</a></dt>
+<dd><p>Makes a measurement and returns the luminance value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650.getSpectrum">
+<span class="sig-name descname"><span class="pre">getSpectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_photoresearch/pr/#PR650.getSpectrum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_photoresearch.pr.PR650.getSpectrum" title="Link to this definition">¶</a></dt>
+<dd><p>Makes a measurement and returns the current power spectrum</p>
+<dl class="simple">
+<dt>If <code class="docutils literal notranslate"><span class="pre">parse=True</span></code> (default):</dt><dd><p>The format is a num array with 100 rows [nm, power]</p>
+</dd>
+<dt>If <code class="docutils literal notranslate"><span class="pre">parse=False</span></code> (default):</dt><dd><p>The output will be the raw string from the PR650 and should then
+be passed to <code class="docutils literal notranslate"><span class="pre">.parseSpectrumOutput()</span></code>. It’s slightly more
+efficient to parse R,G,B strings at once than each individually.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650.longName">
+<span class="sig-name descname"><span class="pre">longName</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'PR650'</span></em><a class="headerlink" href="#psychopy_photoresearch.pr.PR650.longName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650.measure">
+<span class="sig-name descname"><span class="pre">measure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeOut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_photoresearch/pr/#PR650.measure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_photoresearch.pr.PR650.measure" title="Link to this definition">¶</a></dt>
+<dd><p>Make a measurement with the device. For a PR650 the device is
+instructed to make a measurement and then subsequent commands are
+issued to retrieve info about that measurement.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650.parseSpectrumOutput">
+<span class="sig-name descname"><span class="pre">parseSpectrumOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rawStr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_photoresearch/pr/#PR650.parseSpectrumOutput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_photoresearch.pr.PR650.parseSpectrumOutput" title="Link to this definition">¶</a></dt>
+<dd><p>Parses the strings from the PR650 as received after sending
+the command ‘d5’.
+The input argument “rawStr” can be the output from a single
+phosphor spectrum measurement or a list of 3 such measurements
+[rawR, rawG, rawB].</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_photoresearch.pr.PR650.sendMessage">
+<span class="sig-name descname"><span class="pre">sendMessage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DEBUG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_photoresearch/pr/#PR650.sendMessage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_photoresearch.pr.PR650.sendMessage" title="Link to this definition">¶</a></dt>
+<dd><p>Send a command to the photometer and wait an allotted
+timeout for a response (Timeout should be long for low
+light measurements)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+<div id="sourcelink">
+  <a href="https://github.com/psychopy/psychopy/blob/master/docs/source/coder/PR650.rst"
+     rel="nofollow">Source</a>
+</div>
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.1.3.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>

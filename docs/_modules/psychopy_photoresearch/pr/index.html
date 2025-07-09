@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>psychopy_photoresearch.pr &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand small-logo" href="../../../">
+          <img src="../../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+        </a>
+        <a class="navbar-brand large-logo" href="../../../">
+          <img src="../../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+        </a>
+        <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+          <ul class="nav navbar-nav ml-auto">
+            <li><a href="../../../">Home</a></li>
+            <li><a href="../../../download/">Install</a></li>
+            
+            <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+            
+              <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/PR650/">PR650</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/PR655/">PR655</a></li>
+</ul>
+</ul>
+</li> -->
+              
+            
+            <!--  -->
+            
+            
+          </ul>
+
+            <!-- 
+              
+<form class="navbar-form navbar-right" action="../../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+             -->
+
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <h1>Source code for psychopy_photoresearch.pr</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># Part of the PsychoPy library</span>
+<span class="c1"># Copyright (C) 2002-2018 Jonathan Peirce (C) 2019-2022 Open Science Tools Ltd.</span>
+<span class="c1"># Distributed under the terms of the GNU General Public License (GPL).</span>
+
+<span class="sd">&quot;&quot;&quot;PhotoResearch spectrophotometers</span>
+<span class="sd">See http://www.photoresearch.com/</span>
+
+<span class="sd">--------</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">psychopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">serial</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">serial</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<div class="viewcode-block" id="PR650">
+<a class="viewcode-back" href="../../../coder/PR650/#psychopy_photoresearch.pr.PR650">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PR650</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An interface to the PR650 via the serial port.</span>
+
+<span class="sd">    (Added in version 1.63.02)</span>
+
+<span class="sd">    example usage::</span>
+
+<span class="sd">        from psychopy.hardware.pr import PR650</span>
+<span class="sd">        myPR650 = PR650(port)</span>
+<span class="sd">        myPR650.getLum()  # make a measurement</span>
+<span class="sd">        nm, power = myPR650.getLastSpectrum()  # get a power spectrum for the</span>
+<span class="sd">                    last measurement</span>
+
+<span class="sd">    NB :func:`psychopy.hardware.findPhotometer()` will locate and return</span>
+<span class="sd">    any supported device for you so you can also do::</span>
+
+<span class="sd">        from psychopy import hardware</span>
+<span class="sd">        phot = hardware.findPhotometer()</span>
+<span class="sd">        print(phot.getLum())</span>
+
+<span class="sd">    :troubleshooting:</span>
+
+<span class="sd">        Various messages are printed to the log regarding the function of</span>
+<span class="sd">        this device, but to see them you need to set the printing of the</span>
+<span class="sd">        log to the correct level::</span>
+
+<span class="sd">            from psychopy import logging</span>
+<span class="sd">            logging.console.setLevel(logging.ERROR)  # error messages only</span>
+<span class="sd">            logging.console.setLevel(logging.INFO)  # will give more info</span>
+<span class="sd">            logging.console.setLevel(logging.DEBUG)  # log all communications</span>
+
+<span class="sd">        If you&#39;re using a keyspan adapter (at least on macOS) be aware that</span>
+<span class="sd">        it needs a driver installed. Otherwise no ports will be found.</span>
+
+<span class="sd">        Also note that the attempt to connect to the PR650 must occur within</span>
+<span class="sd">        the first few seconds after turning it on.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">longName</span> <span class="o">=</span> <span class="s2">&quot;PR650&quot;</span>
+    <span class="n">driverFor</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pr650&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PR650</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="c1"># add one so that port 1=COM1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span> <span class="o">=</span> <span class="n">port</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portString</span> <span class="o">=</span> <span class="s1">&#39;COM</span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portString</span> <span class="o">=</span> <span class="n">port</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">isOpen</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastQual</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s1">&#39;PR650&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># until we fail</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">codes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;OK&#39;</span><span class="p">:</span> <span class="s1">&#39;000</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span>  <span class="c1"># this is returned after measure</span>
+                      <span class="s1">&#39;18&#39;</span><span class="p">:</span> <span class="s1">&#39;Light Low&#39;</span><span class="p">,</span>  <span class="c1"># returned at beginning of data</span>
+                      <span class="s1">&#39;10&#39;</span><span class="p">:</span> <span class="s1">&#39;Light Low&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;00&#39;</span><span class="p">:</span> <span class="s1">&#39;OK&#39;</span><span class="p">}</span>
+
+        <span class="c1"># try to open the port</span>
+        <span class="n">_linux</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;linux&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;darwin&#39;</span><span class="p">,</span> <span class="s1">&#39;win32&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_linux</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Couldn&#39;t connect to port </span><span class="si">%s</span><span class="s2">. Is it being used by&quot;</span>
+                       <span class="s2">&quot; another program?&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;I don&#39;t know how to handle serial ports on </span><span class="si">%s</span><span class="s2">&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>
+        <span class="c1"># setup the params for PR650 comms</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">baudrate</span> <span class="o">=</span> <span class="mi">9600</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">parity</span> <span class="o">=</span> <span class="s1">&#39;N&#39;</span>  <span class="c1"># none</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">stopbits</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Pyserial &gt;=2.6 throws an exception when trying to open a</span>
+                <span class="c1"># serial port that is already open. Catching that exception</span>
+                <span class="c1"># is not an option here because PySerial only defines a</span>
+                <span class="c1"># single exception type (SerialException)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">isOpen</span><span class="p">():</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Opened serial port </span><span class="si">%s</span><span class="s2">, but couldn&#39;t connect to PR650&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">isOpen</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Successfully opened </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># wait while establish connection</span>
+            <span class="c1"># turn on the backlight as feedback</span>
+            <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;b1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">reply</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="p">[</span><span class="s1">&#39;OK&#39;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="s2">&quot;PR650 isn&#39;t communicating&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+            <span class="c1"># set command to make sure using right units etc...</span>
+            <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;s01,,,,,,01,1&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PR650.sendMessage">
+<a class="viewcode-back" href="../../../coder/PR650/#psychopy_photoresearch.pr.PR650.sendMessage">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sendMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">DEBUG</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Send a command to the photometer and wait an allotted</span>
+<span class="sd">        timeout for a response (Timeout should be long for low</span>
+<span class="sd">        light measurements)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">message</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>  <span class="c1"># append a newline if necess</span>
+
+        <span class="c1"># flush the read buffer first</span>
+        <span class="c1"># read as many chars as are in the buffer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">inWaiting</span><span class="p">())</span>
+
+
+        <span class="c1"># send the message</span>
+        <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">message</span><span class="p">:</span>
+            <span class="c1"># for PR655 have to send individual chars ! :-/</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span><span class="o">!=</span><span class="nb">bytes</span><span class="p">:</span>
+                <span class="n">letter</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># PR650 gets upset if hurried!</span>
+
+        <span class="c1"># get feedback (within timeout limit)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>  <span class="c1"># send complete message</span>
+        <span class="k">if</span> <span class="n">message</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;d5</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;D5</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+            <span class="c1"># we need a spectrum which will have multiple lines</span>
+            <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+            <span class="n">reply</span> <span class="o">=</span> <span class="p">[</span><span class="n">thisLine</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">thisLine</span> <span class="ow">in</span> <span class="n">reply</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">reply</span></div>
+
+
+<div class="viewcode-block" id="PR650.measure">
+<a class="viewcode-back" href="../../../coder/PR650/#psychopy_photoresearch.pr.PR650.measure">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeOut</span><span class="o">=</span><span class="mf">30.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make a measurement with the device. For a PR650 the device is</span>
+<span class="sd">        instructed to make a measurement and then subsequent commands are</span>
+<span class="sd">        issued to retrieve info about that measurement.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;m0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">timeOut</span><span class="p">)</span>  <span class="c1"># measure and hold data</span>
+        <span class="c1"># using the hold data method the PR650 we can get interogate it</span>
+        <span class="c1"># several times for a single measurement</span>
+
+        <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="p">[</span><span class="s1">&#39;OK&#39;</span><span class="p">]:</span>
+            <span class="n">raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;d2&#39;</span><span class="p">)</span>
+            <span class="n">xyz</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>  <span class="c1"># parse into words</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lastQual</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">codes</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">lastQual</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;OK&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">lastLum</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">lastLum</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Didn&#39;t collect any data (extend timeout?)&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PR650.getLum">
+<a class="viewcode-back" href="../../../coder/PR650/#psychopy_photoresearch.pr.PR650.getLum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Makes a measurement and returns the luminance value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measure</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getLastLum</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="PR650.getSpectrum">
+<a class="viewcode-back" href="../../../coder/PR650/#psychopy_photoresearch.pr.PR650.getSpectrum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getSpectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Makes a measurement and returns the current power spectrum</span>
+
+<span class="sd">        If ``parse=True`` (default):</span>
+<span class="sd">            The format is a num array with 100 rows [nm, power]</span>
+
+<span class="sd">        If ``parse=False`` (default):</span>
+<span class="sd">            The output will be the raw string from the PR650 and should then</span>
+<span class="sd">            be passed to ``.parseSpectrumOutput()``. It&#39;s slightly more</span>
+<span class="sd">            efficient to parse R,G,B strings at once than each individually.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measure</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getLastSpectrum</span><span class="p">(</span><span class="n">parse</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PR650.getLastLum">
+<a class="viewcode-back" href="../../../coder/PR650/#psychopy_photoresearch.pr.PR650.getLastLum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLastLum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This retrieves the luminance (in cd/m**2) from the last call to</span>
+<span class="sd">        ``.measure()``</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastLum</span></div>
+
+
+<div class="viewcode-block" id="PR650.getLastSpectrum">
+<a class="viewcode-back" href="../../../coder/PR650/#psychopy_photoresearch.pr.PR650.getLastSpectrum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLastSpectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This retrieves the spectrum from the last call to ``.measure()``</span>
+
+<span class="sd">        If ``parse=True`` (default):</span>
+<span class="sd">        The format is a num array with 100 rows [nm, power]</span>
+
+<span class="sd">        otherwise:</span>
+<span class="sd">        The output will be the raw string from the PR650 and should then</span>
+<span class="sd">        be passed to ``.parseSpectrumOutput()``. It&#39;s more efficient to</span>
+<span class="sd">        parse R,G,B strings at once than each individually.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;d5&#39;</span><span class="p">)</span>  <span class="c1"># returns a list where each list</span>
+        <span class="k">if</span> <span class="n">parse</span><span class="p">:</span>
+            <span class="c1"># skip the first 2 entries (info)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parseSpectrumOutput</span><span class="p">(</span><span class="n">raw</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">raw</span></div>
+
+
+<div class="viewcode-block" id="PR650.parseSpectrumOutput">
+<a class="viewcode-back" href="../../../coder/PR650/#psychopy_photoresearch.pr.PR650.parseSpectrumOutput">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">parseSpectrumOutput</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rawStr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Parses the strings from the PR650 as received after sending</span>
+<span class="sd">        the command &#39;d5&#39;.</span>
+<span class="sd">        The input argument &quot;rawStr&quot; can be the output from a single</span>
+<span class="sd">        phosphor spectrum measurement or a list of 3 such measurements</span>
+<span class="sd">        [rawR, rawG, rawB].</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rawStr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">RGB</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">rawR</span> <span class="o">=</span> <span class="n">rawStr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+            <span class="n">rawG</span> <span class="o">=</span> <span class="n">rawStr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+            <span class="n">rawB</span> <span class="o">=</span> <span class="n">rawStr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+            <span class="n">nPoints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rawR</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">RGB</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">nPoints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rawStr</span><span class="p">)</span>
+            <span class="n">raw</span> <span class="o">=</span> <span class="n">rawStr</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+
+        <span class="n">nm</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">RGB</span><span class="p">:</span>
+            <span class="n">power</span> <span class="o">=</span> <span class="p">[[],</span> <span class="p">[],</span> <span class="p">[]]</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nPoints</span><span class="p">):</span>
+                <span class="c1"># each entry in list is a string like this:</span>
+                <span class="n">thisNm</span><span class="p">,</span> <span class="n">thisR</span> <span class="o">=</span> <span class="n">rawR</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+                <span class="n">thisR</span> <span class="o">=</span> <span class="n">thisR</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">thisNm</span><span class="p">,</span> <span class="n">thisG</span> <span class="o">=</span> <span class="n">rawG</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+                <span class="n">thisG</span> <span class="o">=</span> <span class="n">thisG</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">thisNm</span><span class="p">,</span> <span class="n">thisB</span> <span class="o">=</span> <span class="n">rawB</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+                <span class="n">thisB</span> <span class="o">=</span> <span class="n">thisB</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;nm.append(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">thisNm</span><span class="p">)</span>
+                <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;power[0].append(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">thisR</span><span class="p">)</span>
+                <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;power[1].append(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">thisG</span><span class="p">)</span>
+                <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;power[2].append(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">thisB</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">power</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rawStr</span><span class="p">):</span>
+                <span class="c1"># each entry in list is a string like this:</span>
+                <span class="n">thisNm</span><span class="p">,</span> <span class="n">thisPower</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+                <span class="n">nm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thisNm</span><span class="p">)</span>
+                <span class="n">power</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thisPower</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">nm</span><span class="p">),</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">power</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="PR655">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PR655</span><span class="p">(</span><span class="n">PR650</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An interface to the PR655/PR670 via the serial port.</span>
+
+<span class="sd">    example usage::</span>
+
+<span class="sd">        from psychopy.hardware.pr import PR655</span>
+<span class="sd">        myPR655 = PR655(port)</span>
+<span class="sd">        myPR655.getLum()  # make a measurement</span>
+<span class="sd">        nm, power = myPR655.getLastSpectrum()  # get a power spectrum for the</span>
+<span class="sd">                    last measurement</span>
+
+<span class="sd">    NB :func:`psychopy.hardware.findPhotometer()` will locate and return</span>
+<span class="sd">    any supported device for you so you can also do::</span>
+
+<span class="sd">        from psychopy import hardware</span>
+<span class="sd">        phot = hardware.findPhotometer()</span>
+<span class="sd">        print(phot.getLum())</span>
+
+<span class="sd">    :troubleshooting:</span>
+
+<span class="sd">        If the device isn&#39;t responding try turning it off and turning it</span>
+<span class="sd">        on again, and/or disconnecting/reconnecting the USB cable. It may</span>
+<span class="sd">        be that the port has become controlled by some other program.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">longName</span> <span class="o">=</span> <span class="s2">&quot;PR655/PR670&quot;</span>
+    <span class="n">driverFor</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pr655&quot;</span><span class="p">,</span> <span class="s2">&quot;pr670&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># get this from the device later</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">OK</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># until we fail</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="c1"># add one so that port 1=COM1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span> <span class="o">=</span> <span class="n">port</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portString</span> <span class="o">=</span> <span class="s1">&#39;COM</span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portString</span> <span class="o">=</span> <span class="n">port</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">portNumber</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">codes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;OK&#39;</span><span class="p">:</span> <span class="s1">&#39;000</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span>  <span class="c1"># this is returned after measure</span>
+                      <span class="s1">&#39;18&#39;</span><span class="p">:</span> <span class="s1">&#39;Light Low&#39;</span><span class="p">,</span>  <span class="c1"># returned at beginning of data</span>
+                      <span class="s1">&#39;10&#39;</span><span class="p">:</span> <span class="s1">&#39;Light Low&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;00&#39;</span><span class="p">:</span> <span class="s1">&#39;OK&#39;</span><span class="p">}</span>
+
+        <span class="c1"># try to open the port</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="n">serial</span><span class="o">.</span><span class="n">Serial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Couldn&#39;t connect to port </span><span class="si">%s</span><span class="s2">. Is it being used by &quot;</span>
+                   <span class="s2">&quot;another program?&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+        <span class="c1"># setup the params for PR650 comms</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">baudrate</span> <span class="o">=</span> <span class="mi">9600</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">parity</span> <span class="o">=</span> <span class="s1">&#39;N&#39;</span>  <span class="c1"># none</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">stopbits</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># attempt to close if it&#39;s currently open</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">isOpen</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Found a device on serial port </span><span class="si">%s</span><span class="s2">, but couldn&#39;t &quot;</span>
+                       <span class="s2">&quot;open that port&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">)</span>
+            <span class="c1"># this should be large when making measurements</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="mf">0.1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">startRemoteMode</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDeviceType</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Successfully opened </span><span class="si">%s</span><span class="s2"> on </span><span class="si">%s</span><span class="s2">&quot;</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">portString</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_error</span><span class="p">(</span><span class="s2">&quot;PR655/PR670 isn&#39;t communicating&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">endRemoteMode</span><span class="p">()</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Closed PR655 port&#39;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+<div class="viewcode-block" id="PR655.startRemoteMode">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.startRemoteMode">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">startRemoteMode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sets the Colorimeter into remote mode</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;PHOTO&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PR655.getDeviceType">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.getDeviceType">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDeviceType</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the device type (e.g. &#39;PR-655&#39; or &#39;PR-670&#39;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;D111&#39;</span><span class="p">)</span>  <span class="c1"># returns errCode,</span>
+        <span class="k">return</span> <span class="n">_stripLineEnds</span><span class="p">(</span><span class="n">reply</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># last element</span></div>
+
+
+<div class="viewcode-block" id="PR655.getDeviceSN">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.getDeviceSN">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getDeviceSN</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the device serial number</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;D110&#39;</span><span class="p">)</span>  <span class="c1"># returns errCode,</span>
+        <span class="k">return</span> <span class="n">_stripLineEnds</span><span class="p">(</span><span class="n">reply</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># last element</span></div>
+
+
+<div class="viewcode-block" id="PR655.endRemoteMode">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.endRemoteMode">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">endRemoteMode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Puts the colorimeter back into normal mode</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Q&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PR655.getLastTristim">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.getLastTristim">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLastTristim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fetches (from the device) the last CIE 1931 Tristimulus values</span>
+
+<span class="sd">        :returns:</span>
+<span class="sd">            list: status, units, Tristimulus Values</span>
+
+<span class="sd">        :see also:</span>
+<span class="sd">            :func:`~PR655.measure` automatically populates pr655.lastTristim</span>
+<span class="sd">            with just the tristimulus coordinates</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;D2&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PR655.getLastUV">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.getLastUV">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLastUV</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fetches (from the device) the last CIE 1976 u,v coords</span>
+
+<span class="sd">        :returns:</span>
+<span class="sd">            list: status, units, Photometric brightness, u, v</span>
+
+<span class="sd">        :see also:</span>
+<span class="sd">            :func:`~PR655.measure` automatically populates pr655.lastUV</span>
+<span class="sd">            with [u,v]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;D3&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PR655.getLastXY">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.getLastXY">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLastXY</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fetches (from the device) the last CIE 1931 x,y coords</span>
+
+
+<span class="sd">        :returns:</span>
+<span class="sd">            list: status, units, Photometric brightness, x,y</span>
+
+<span class="sd">        :see also:</span>
+<span class="sd">            :func:`~PR655.measure` automatically populates pr655.lastXY</span>
+<span class="sd">            with [x,y]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;D1&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PR655.getLastSpectrum">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.getLastSpectrum">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLastSpectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This retrieves the spectrum from the last call to</span>
+<span class="sd">        :func:`~PR655.measure`</span>
+
+<span class="sd">        If `parse=True` (default):</span>
+
+<span class="sd">            The format is a num array with 100 rows [nm, power]</span>
+
+<span class="sd">        otherwise:</span>
+
+<span class="sd">            The output will be the raw string from the PR650 and should then</span>
+<span class="sd">            be passed to :func:`~PR655.parseSpectrumOutput`. It&#39;s more</span>
+<span class="sd">            efficient to parse R,G,B strings at once than each individually.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;D5&#39;</span><span class="p">)</span>  <span class="c1"># returns a list where each list</span>
+        <span class="k">if</span> <span class="n">parse</span><span class="p">:</span>
+            <span class="c1"># skip the first 2 entries (info)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parseSpectrumOutput</span><span class="p">(</span><span class="n">raw</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">raw</span></div>
+
+
+<div class="viewcode-block" id="PR655.getLastColorTemp">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.getLastColorTemp">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">getLastColorTemp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fetches (from the device) the color temperature (K) of the</span>
+<span class="sd">        last measurement</span>
+
+<span class="sd">        :returns:</span>
+<span class="sd">            list: status, units, exponent, correlated color temp (Kelvins),</span>
+<span class="sd">            CIE 1960 deviation</span>
+
+<span class="sd">        :see also:</span>
+<span class="sd">            :func:`~PR655.measure` automatically populates</span>
+<span class="sd">            pr655.lastColorTemp with the color temp in Kelvins</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;D4&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PR655.measure">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.measure">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeOut</span><span class="o">=</span><span class="mf">30.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make a measurement with the device.</span>
+
+<span class="sd">        This automatically populates:</span>
+
+<span class="sd">            - ``.lastLum``</span>
+<span class="sd">            - ``.lastSpectrum``</span>
+<span class="sd">            - `.lastCIExy`</span>
+<span class="sd">            - `.lastCIEuv`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sendMessage</span><span class="p">(</span><span class="s1">&#39;M0&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">measured</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">CIEuv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getLastUV</span><span class="p">()</span>
+        <span class="n">CIExy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getLastXY</span><span class="p">()</span>
+        <span class="n">CIEtristim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getLastTristim</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastLum</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">CIEuv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastUV</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">CIEuv</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">CIEuv</span><span class="p">[</span><span class="mi">4</span><span class="p">])]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastXY</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">CIExy</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">CIExy</span><span class="p">[</span><span class="mi">4</span><span class="p">])]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastTristim</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">CIEtristim</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span>
+            <span class="n">CIEtristim</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">CIEtristim</span><span class="p">[</span><span class="mi">4</span><span class="p">])]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastSpectrum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getLastSpectrum</span><span class="p">(</span><span class="n">parse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastColorTemp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getLastColorTemp</span><span class="p">()[</span><span class="mi">3</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="PR655.parseSpectrumOutput">
+<a class="viewcode-back" href="../../../coder/PR655/#psychopy_photoresearch.pr.PR655.parseSpectrumOutput">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">parseSpectrumOutput</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rawStr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Parses the strings from the PR650 as received after sending</span>
+<span class="sd">        the command &#39;D5&#39;.</span>
+<span class="sd">        The input argument &quot;rawStr&quot; can be the output from a single</span>
+<span class="sd">        phosphor spectrum measurement or a list of 3 such measurements</span>
+<span class="sd">        [rawR, rawG, rawB].</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rawStr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">RGB</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">rawR</span> <span class="o">=</span> <span class="n">rawStr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+            <span class="n">rawG</span> <span class="o">=</span> <span class="n">rawStr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+            <span class="n">rawB</span> <span class="o">=</span> <span class="n">rawStr</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+            <span class="n">nPoints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rawR</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">RGB</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">nPoints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rawStr</span><span class="p">)</span>
+            <span class="n">raw</span> <span class="o">=</span> <span class="n">rawStr</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+
+        <span class="n">nm</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">RGB</span><span class="p">:</span>
+            <span class="n">power</span> <span class="o">=</span> <span class="p">[[],</span> <span class="p">[],</span> <span class="p">[]]</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nPoints</span><span class="p">):</span>
+                <span class="c1"># each entry in list is a string like this:</span>
+                <span class="n">thisNm</span><span class="p">,</span> <span class="n">thisR</span> <span class="o">=</span> <span class="n">rawR</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+                <span class="n">thisR</span> <span class="o">=</span> <span class="n">thisR</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">thisNm</span><span class="p">,</span> <span class="n">thisG</span> <span class="o">=</span> <span class="n">rawG</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+                <span class="n">thisG</span> <span class="o">=</span> <span class="n">thisG</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">thisNm</span><span class="p">,</span> <span class="n">thisB</span> <span class="o">=</span> <span class="n">rawB</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+                <span class="n">thisB</span> <span class="o">=</span> <span class="n">thisB</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;nm.append(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">thisNm</span><span class="p">)</span>
+                <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;power[0].append(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">thisR</span><span class="p">)</span>
+                <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;power[1].append(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">thisG</span><span class="p">)</span>
+                <span class="n">exec</span><span class="p">(</span><span class="s1">&#39;power[2].append(</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">thisB</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">power</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">rawStr</span><span class="p">):</span>
+                <span class="c1"># each entry in list is a string like this:</span>
+                <span class="n">thisNm</span><span class="p">,</span> <span class="n">thisPower</span> <span class="o">=</span> <span class="n">point</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+                <span class="n">nm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">thisNm</span><span class="p">))</span>
+                <span class="n">power</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">thisPower</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">nm</span><span class="p">),</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">power</span><span class="p">)</span></div>
+</div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_stripLineEnds</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.1.3.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>
