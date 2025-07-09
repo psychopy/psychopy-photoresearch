@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "psychopy-photoresearch"
-version = "0.0.3"
+version = "0.1.0"
 description = "Extension package for adding support for Photo Research Inc. light-measuring devices to PsychoPy."
 readme = "README.md"
 requires-python = ">= 3.7"
@@ -41,13 +41,17 @@ docs = [
 ]
 # dependencies for running the test suite
 tests = [
-  "psychopy @ git+https://github.com/psychopy/psychopy@release",
+  "psychopy",
   "pytest",
 ]
 
 [project.entry-points."psychopy.hardware.pr"]
 PR650 = "psychopy_photoresearch.pr:PR650"
 PR655 = "psychopy_photoresearch.pr:PR655"
+
+
+[project.entry-points."psychopy.experiment.monitor"]
+SpectroScanPRDeviceBackend = "psychopy_photoresearch.experiment.pr:SpectroScanPRDeviceBackend"
 
 [tool.setuptools.packages.find]
 where = ["",]
